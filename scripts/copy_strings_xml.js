@@ -19,7 +19,7 @@ directoryExists = function(path) {
 };
 
 if (directoryExists('platforms/android')) {
-  console.log('workarround for https://github.com/arnesson/cordova-plugin-firebase/issues/142', process.cwd());
+  console.log('workarround for https://github.com/arnesson/cordova-plugin-firebase/issues/142');
   //add google-service's client: client_info: mobilesdk_app_id
   googleservicesjson = require(process.cwd() + '/google-services.json');
   STRINGS_XML = 'platforms/android/res/values/strings.xml';
@@ -32,6 +32,7 @@ if (directoryExists('platforms/android')) {
       throw new Error(_fail);
     }
     setall = function(string = {}) {
+      string.$ = string.$ || {};
       string.$.name = 'google_app_id';
       string.$.templateMergeStrategy = 'preserve';
       string.$.translatable = false;
