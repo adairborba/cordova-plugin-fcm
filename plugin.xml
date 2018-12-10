@@ -64,6 +64,8 @@
 					<param name="onload" value="true" />
 				</feature>
 		</config-file>
+
+		<dependency id="cordova-support-google-services" version="~1.2.0"/>
 		
         <framework src="com.google.firebase:firebase-core:11.8.0" />
         <framework src="com.google.firebase:firebase-messaging:11.8.0" />
